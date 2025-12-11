@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+
+
+
+
+
+*{
+  margin: 0;
+  padding: 0;
+ }
+ body{
+  height: 100vh;
+  background-image: linear-gradient(#D8C7FF,#19006C);
+  font-family: 'poppins';
+ }
+  
+  .center-box{
+    text-align:center;
+    margin-top:60px;
+  }
+  
+  .grid{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:20px;
+  }
+  
+  .quiz-box{
+    width:60%;
+    background:#fff;
+    padding:30px;
+    margin:40px auto;
+    border-radius:10px;
+    box-shadow:0 0 15px rgba(0,0,0,0.1);
+  }
+  
+  .btn, .back-btn, .next-btn{
+    background:#007bff;
+    color:white;
+    padding:10px 18px;
+    border-radius:6px;
+    text-decoration:none;
+    display:inline-block;
+    margin-top:10px;
+  }
+  
+  .back-btn{
+    background:#6c757d;
+  }
+  
+  .next-btn{
+    background:#28a745;
+  }
+  
+  .nav-btns{
+    display:flex;
+    justify-content:space-between;
+    margin-top:25px;
+  }
+  
