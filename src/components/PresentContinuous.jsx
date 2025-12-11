@@ -1,11 +1,12 @@
 import React, { useRef, useState } from 'react'
 import'./Quiz.css'
-import { presentContinuousdata } from '../Assets/presentContinuousdata';
+import { presentcontinuousdata } from '../assets/presentcontinuousdata';
+
 
 const PresentContinuous = () => {
 
   let [index,setIndex]= useState(0);
-  let [question, setQuestion] = useState(presentContinuousdata[index]);
+  let [question, setQuestion] = useState(presentcontinuousdata[index]);
   let [lock,setLock]=useState(false);
   let [score, setScore]= useState(0);
   let [result,setResult] = useState(false);
@@ -34,12 +35,12 @@ const PresentContinuous = () => {
 
   const next=()=>{
     if(lock===true){
-      if(index === presentContinuousdata.length -1){
+      if(index === presentcontinuousdata.length -1){
         setResult(true);
         return 0;
       }
       setIndex(++index);
-      setQuestion(presentContinuousdata[index]);
+      setQuestion(presentcontinuousdata[index]);
       setLock(false);
       option_array.map((option)=>{
         option.current.classList.remove("wrong");
@@ -51,7 +52,7 @@ const PresentContinuous = () => {
 
   const reset = ()=>{
     setIndex(0);
-    setQuestion(presentContinuousdata[0]);
+    setQuestion(presentcontinuousdata[0]);
     setScore(0);
     setLock(false);
     setResult(false);
@@ -70,8 +71,8 @@ const PresentContinuous = () => {
         <li ref={option4} onClick={(e)=>{checkAns(e,4)}}>{question.option4}</li>
       </ul>
       <button onClick={next}>Next</button>
-      <div className="index">{index+1} of {presentContinuousdata.length} questions</div></>}
-      {result?<><h2>You Scored {score} out of {presentContinuousdata.length}</h2>
+      <div className="index">{index+1} of {presentcontinuousdata.length} questions</div></>}
+      {result?<><h2>You Scored {score} out of {presentcontinuousdata.length}</h2>
       <button onClick={reset}>Reset</button></>:<></>}
       
     </div>

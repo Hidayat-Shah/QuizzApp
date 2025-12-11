@@ -1,4 +1,4 @@
-export const presentContinuousdata = [
+export const presentcontinuousdata = [
     {
       question: "میں کھانا کھا رہا ہوں۔",
       option1: "I eat food.",
