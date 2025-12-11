@@ -1,11 +1,12 @@
 import React, { useRef, useState } from 'react'
 import'./Quiz.css'
-import { presentPerfectdata } from '../Assets/presentPerfectdata';
+import { presentperfectdata } from '../assets/presentperfectdata';
+
 
 const PresentPerfect = () => {
 
   let [index,setIndex]= useState(0);
-  let [question, setQuestion] = useState(presentPerfectdata [index]);
+  let [question, setQuestion] = useState(presentperfectdata[index]);
   let [lock,setLock]=useState(false);
   let [score, setScore]= useState(0);
   let [result,setResult] = useState(false);
@@ -34,12 +35,12 @@ const PresentPerfect = () => {
 
   const next=()=>{
     if(lock===true){
-      if(index === presentPerfectdata .length -1){
+      if(index === presentperfectdata.length -1){
         setResult(true);
         return 0;
       }
       setIndex(++index);
-      setQuestion(presentPerfectdata [index]);
+      setQuestion(presentperfectdata[index]);
       setLock(false);
       option_array.map((option)=>{
         option.current.classList.remove("wrong");
@@ -70,8 +71,8 @@ const PresentPerfect = () => {
         <li ref={option4} onClick={(e)=>{checkAns(e,4)}}>{question.option4}</li>
       </ul>
       <button onClick={next}>Next</button>
-      <div className="index">{index+1} of {presentPerfectdata .length} questions</div></>}
-      {result?<><h2>You Scored {score} out of {presentPerfectdata .length}</h2>
+      <div className="index">{index+1} of {presentperfectdata.length} questions</div></>}
+      {result?<><h2>You Scored {score} out of {presentperfectdata.length}</h2>
       <button onClick={reset}>Reset</button></>:<></>}
       
     </div>

@@ -1,4 +1,4 @@
-export const presentPerfectdata = [
+export const presentperfectdata = [
     // ✅ Affirmative (10)
     { question: "میں نے اپنا کام مکمل کر لیا ہے۔", option1: "I has completed my work.", option2: "I have completed my work.", option3: "I completed my work.", option4: "I am completed my work.", ans: 2 },
     { question: "اس نے کھانا پکا لیا ہے۔", option1: "She has cooked the food.", option2: "She have cooked the food.", option3: "She cooked the food.", option4: "She is cooked the food.", ans: 1 },
