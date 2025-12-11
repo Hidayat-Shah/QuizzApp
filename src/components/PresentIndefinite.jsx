@@ -1,12 +1,12 @@
 import React, { useRef, useState } from 'react'
 import'./Quiz.css'
-import { englishdata } from '../Assets/englishdata';
+import { presentindefinitedata } from '../assets/presentindefinitedata';
 
 
 const PresentIndefinite = () => {
 
   let [index,setIndex]= useState(0);
-  let [question, setQuestion] = useState(englishdata[index]);
+  let [question, setQuestion] = useState(presentindefinitedata[index]);
   let [lock,setLock]=useState(false);
   let [score, setScore]= useState(0);
   let [result,setResult] = useState(false);
@@ -35,12 +35,12 @@ const PresentIndefinite = () => {
 
   const next=()=>{
     if(lock===true){
-      if(index === englishdata.length -1){
+      if(index === presentindefinitedata.length -1){
         setResult(true);
         return 0;
       }
       setIndex(++index);
-      setQuestion(englishdata[index]);
+      setQuestion(presentindefinitedata[index]);
       setLock(false);
       option_array.map((option)=>{
         option.current.classList.remove("wrong");
@@ -52,7 +52,7 @@ const PresentIndefinite = () => {
 
   const reset = ()=>{
     setIndex(0);
-    setQuestion(englishdata[0]);
+    setQuestion(presentindefinitedata[0]);
     setScore(0);
     setLock(false);
     setResult(false);
@@ -71,8 +71,8 @@ const PresentIndefinite = () => {
         <li ref={option4} onClick={(e)=>{checkAns(e,4)}}>{question.option4}</li>
       </ul>
       <button onClick={next}>Next</button>
-      <div className="index">{index+1} of {englishdata.length} questions</div></>}
-      {result?<><h2>You Scored {score} out of {englishdata.length}</h2>
+      <div className="index">{index+1} of {presentindefinitedata.length} questions</div></>}
+      {result?<><h2>You Scored {score} out of {presentindefinitedata.length}</h2>
       <button onClick={reset}>Reset</button></>:<></>}
       
     </div>

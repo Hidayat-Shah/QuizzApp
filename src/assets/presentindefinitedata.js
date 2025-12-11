@@ -1,4 +1,4 @@
-export const englishdata = [
+export const presentindefinitedata = [
         {
           question: "He _____ to school every day.",
           option1: "go (جاتا ہے)",
