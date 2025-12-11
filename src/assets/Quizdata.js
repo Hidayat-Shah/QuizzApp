@@ -1,4 +1,4 @@
-export const data = [
+export const Quizdata = [
   {
     question: "What is the main function of a switch?",
     option1: "Forward frames based on MAC address",

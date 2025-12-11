@@ -1,11 +1,12 @@
 import React, { useRef, useState } from 'react'
 import'./Quiz.css'
-import { data } from '../Assets/data';
+import { Quizdata } from '../assets/Quizdata';
+
 
 const Quiz = () => {
 
   let [index,setIndex]= useState(0);
-  let [question, setQuestion] = useState(data[index]);
+  let [question, setQuestion] = useState(Quizdata[index]);
   let [lock,setLock]=useState(false);
   let [score, setScore]= useState(0);
   let [result,setResult] = useState(false);
@@ -34,12 +35,12 @@ const Quiz = () => {
 
   const next=()=>{
     if(lock===true){
-      if(index === data.length -1){
+      if(index === Quizdata.length -1){
         setResult(true);
         return 0;
       }
       setIndex(++index);
-      setQuestion(data[index]);
+      setQuestion(Quizdata[index]);
       setLock(false);
       option_array.map((option)=>{
         option.current.classList.remove("wrong");
@@ -51,7 +52,7 @@ const Quiz = () => {
 
   const reset = ()=>{
     setIndex(0);
-    setQuestion(data[0]);
+    setQuestion(Quizdata[0]);
     setScore(0);
     setLock(false);
     setResult(false);
@@ -70,8 +71,8 @@ const Quiz = () => {
         <li ref={option4} onClick={(e)=>{checkAns(e,4)}}>{question.option4}</li>
       </ul>
       <button onClick={next}>Next</button>
-      <div className="index">{index+1} of {data.length} questions</div></>}
-      {result?<><h2>You Scored {score} out of {data.length}</h2>
+      <div className="index">{index+1} of {Quizdata.length} questions</div></>}
+      {result?<><h2>You Scored {score} out of {Quizdata.length}</h2>
       <button onClick={reset}>Reset</button></>:<></>}
       
     </div>
